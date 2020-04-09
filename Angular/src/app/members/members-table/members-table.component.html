@@ -1,0 +1,15 @@
+<div class="container pt-3">
+  <h2>Members Page</h2>
+  <div class="form-group">
+    <input #organization type="text" placeholder={{getOrganization()}}/>
+  <button class="btn-primary" (click)="loadMembers(organization.value)">Load</button>
+  </div>
+  
+  <table class="table-responsive table-sm table-hover">
+    <thead app-member-head></thead>
+    <tbody>
+      <tr class="table-info" app-member-row [member]="member" *ngFor="let member of members">
+      </tr>
+    </tbody>
+  </table>
+</div>
